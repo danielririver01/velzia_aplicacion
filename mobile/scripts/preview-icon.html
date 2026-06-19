@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Velzia Icon Preview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, 'Segoe UI', system-ui, sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+  h1 {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #f2460d, #f97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .subtitle {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    max-width: 900px;
+  }
+  .mockup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .device {
+    width: 120px;
+    height: 120px;
+    border-radius: 28px;
+    background: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow:
+      0 0 0 1px rgba(255,255,255,0.08),
+      0 20px 60px rgba(0,0,0,0.5);
+    position: relative;
+  }
+  .device img {
+    width: 72px;
+    height: 72px;
+    border-radius: 16px;
+    object-fit: contain;
+  }
+  .device.large {
+    width: 180px;
+    height: 180px;
+    border-radius: 40px;
+  }
+  .device.large img {
+    width: 102px;
+    height: 102px;
+    border-radius: 22px;
+  }
+  .label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .preview-container {
+    width: 100%;
+    max-width: 1024px;
+    margin: 40px 0;
+    display: flex;
+    justify-content: center;
+  }
+  .preview-container img {
+    width: 512px;
+    height: 512px;
+    border-radius: 80px;
+    box-shadow: 0 30px 80px rgba(242,70,13,0.15);
+  }
+  .colors {
+    display: flex;
+    gap: 12px;
+    margin: 30px 0;
+  }
+  .color {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .instructions {
+    background: #141414;
+    border: 1px solid #222;
+    border-radius: 16px;
+    padding: 24px 32px;
+    max-width: 600px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .instructions h3 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #f97316;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .instructions code {
+    display: block;
+    background: #1a1a1a;
+    padding: 12px 16px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #aaa;
+    margin: 8px 0;
+    border: 1px solid #222;
+  }
+  .instructions p {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+  <h1>Velzia Icon</h1>
+  <p class="subtitle">App icon preview — bold &amp; professional</p>
+
+  <div class="grid">
+    <div class="mockup">
+      <div class="device large">
+        <img src="../assets/icon.png" alt="iOS Icon">
+      </div>
+      <span class="label">iOS</span>
+    </div>
+    <div class="mockup">
+      <div class="device large" style="border-radius: 20px;">
+        <img src="../assets/adaptive-icon.png" alt="Android Icon" style="border-radius: 8px;">
+      </div>
+      <span class="label">Android</span>
+    </div>
+    <div class="mockup">
+      <div class="device">
+        <img src="../assets/icon.png" alt="App Icon">
+      </div>
+      <span class="label">App Icon</span>
+    </div>
+    <div class="mockup">
+      <div class="device" style="width: 48px; height: 48px; border-radius: 10px;">
+        <img src="../assets/favicon.png" alt="Favicon" style="width: 32px; height: 32px; border-radius: 6px;">
+      </div>
+      <span class="label">Favicon</span>
+    </div>
+  </div>
+
+  <div class="preview-container">
+    <img src="../assets/icon.png" alt="Velzia Icon">
+  </div>
+
+  <div class="instructions">
+    <h3>Assets generados</h3>
+    <code>assets/icon.png (1024×1024)</code>
+    <code>assets/adaptive-icon.png (1024×1024)</code>
+    <code>assets/favicon.png (48×48)</code>
+    <code>assets/splash-icon.png (1284×1284)</code>
+    <code>assets/icon.svg (vector)</code>
+    <p style="margin-top: 12px;">
+      Para regenerar los PNGs desde el SVG, ejecuta:
+    </p>
+    <code>node scripts/generate-icons.cjs</code>
+  </div>
+</body>
+</html>
